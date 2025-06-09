@@ -100,16 +100,17 @@ int main(){
         cerr << "ERROR!" << endl;
         return 0;
     }
-    while (!file.eof()){
-        string word;
-        file >> word;
-        file.ignore();
+    string word;
+    while (file >> word){
+        //file.ignore();
+        cout << "#" << word << endl;
         Vertex* newVertex = new Vertex(word);
         Graph.push_back(newVertex);
     }
     file.close();
     //Xử lí các đỉnh kề với nhau
     int sz = Graph.size();
+    //cout << Graph[sz-1]->data << endl;
     for (int i = 0; i < sz; ++i){
         for (int j = i+1; j < sz; ++j){
             if (Graph[i]->isFriend(Graph[j])){
