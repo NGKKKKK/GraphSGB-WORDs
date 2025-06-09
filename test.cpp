@@ -126,7 +126,6 @@ int main(){
     cout << "b) " << endl;
     string w1,w2;
     cout << "Từ 1 : "; cin >> w1;
-    cout << endl;
     cout << "Từ 2 : "; cin >> w2;
     Vertex* u = findVertexWithWord(w1, Graph);
     Vertex* v = findVertexWithWord(w2, Graph);
