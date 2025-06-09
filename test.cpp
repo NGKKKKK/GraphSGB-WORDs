@@ -61,7 +61,7 @@ Vertex* findVertexWithWord(const string& word, const vector<Vertex*>& Graph){
     return nullptr;
 }
 
-//Tìm đường đi ngắn nhất giữa 2 đỉnh (u -> v)
+//Tìm đường đi ngắn nhất giữa 2 đỉnh (u -> v) (không trọng số thì BFS thôi là được)
 vector<Vertex*> findShortestPath(Vertex* u, Vertex* v){
     queue<Vertex*> que;
     unordered_map<Vertex*, Vertex*> trace;
