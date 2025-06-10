@@ -103,7 +103,7 @@ int main(){
     string word;
     while (file >> word){
         //file.ignore();
-        cout << "#" << word << endl;
+        //cout << "#" << word << endl;
         Vertex* newVertex = new Vertex(word);
         Graph.push_back(newVertex);
     }
@@ -136,13 +136,14 @@ int main(){
     }
     vector<Vertex*> ans2 = findShortestPath(u,v);
     int sz_ = ans2.size();
-    if (sz_ == 0){
+    if (sz_ <= 1){
         cout << "Không có đường đi ngắn nhất giữa 2 đỉnh đã cho" << endl;
         return 0;
     }
-    cout << "Đường đi ngắn nhất giữa 2 đỉnh đã cho có độ dài là: " << sz_ << endl << "Đường đi: ";
+    cout << "Đường đi ngắn nhất giữa 2 đỉnh đã cho có độ dài là: " << sz_-1 << endl << "Đường đi: ";
     for (int i = sz_-1; i > 0; --i) cout << ans2[i]->data << " -> ";
     cout << ans2[0]->data;
     cout << endl;
+    for (Vertex* kl : Graph) delete kl;
     return 0;
 }
